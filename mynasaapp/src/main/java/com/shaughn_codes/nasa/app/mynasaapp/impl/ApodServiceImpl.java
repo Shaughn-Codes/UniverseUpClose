@@ -17,17 +17,18 @@ public class ApodServiceImpl implements ApodService {
     @Autowired
     private RestTemplate restTemplate;
     @Value("${api.key}")
-    public String apiKey;
+    private String apiKey;
     @Value("${nasa.apod.url}")
-    public String Apodurl;
+    private String apodUrl;
 
     @Override
     public Apod fetchApodData(){
        try {
            HttpHeaders httpHeaders = new HttpHeaders();
-           httpHeaders.set("api_key",apiKey);
-           ResponseEntity<Apod> response = restTemplate.exchange(Apodurl, HttpMethod.GET,new HttpEntity<>(httpHeaders),Apod.class);
-           log.info("Response from Apod API: ",response.getBody());
+           String url = apodUrl + "?api_key=" + apiKey;
+           ResponseEntity<Apod> response = restTemplate.exchange(url, HttpMethod.GET,new HttpEntity<>(httpHeaders),Apod.class);
+           log.info("Response from Apod API: ",response.getBody().toString());
+           System.out.println(response.getBody().toString());
            return response.getBody();
        }catch (Exception e){
         log.error("Something went wrong while retriving data: ",e);

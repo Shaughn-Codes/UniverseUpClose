@@ -58,6 +58,18 @@ public class Apod {
         this.copyright = copyright;
     }
 
+    @Override
+    public String toString() {
+        return "Apod{" +
+                "date='" + date + '\'' +
+                ", explanation='" + explanation + '\'' +
+                ", title='" + title + '\'' +
+                ", hdurl='" + hdurl + '\'' +
+                ", url='" + url + '\'' +
+                ", copyright='" + copyright + '\'' +
+                '}';
+    }
+
     private String date;
     private String explanation;
     private String title;
