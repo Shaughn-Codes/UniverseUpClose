@@ -37,4 +37,21 @@ public class ApodServiceImpl implements ApodService {
        }
     }
 
+
+    @Override
+    public Apod fecthApodByDate(String date) {
+        try {
+            HttpHeaders httpHeaders = new HttpHeaders();
+            String url = apodUrl + "?api_key=" + apiKey + "&date=" + date;
+            ResponseEntity<Apod> response = restTemplate.exchange(url, HttpMethod.GET,new HttpEntity<>(httpHeaders),Apod.class);
+            log.info("Response from Apod API date: ",response.getBody().toString());
+            System.out.println(response.getBody().toString());
+            return response.getBody();
+        }catch (Exception e){
+            log.error("Something went wrong while retriving data: ",e);
+            throw new  ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
+                    "Exception while calling APOD API");
+        }
+
+    }
 }

@@ -11,8 +11,9 @@ import {theme} from './theme';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <ApodCard />
-  </React.StrictMode>
+  <App />
+  </React.StrictMode>,
+  document.getElementById('id')
   );
 
 // If you want to start measuring performance in your app, pass a function

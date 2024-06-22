@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Card, CardContent, CardMedia, Typography, CircularProgress, CardActionArea, AppBar, Toolbar, IconButton } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Container, Card, CardContent, CardMedia, Typography, CircularProgress, CardActionArea } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import './ApodCard.css';
 
-const ApodCard = () => {
+const ApodDate = () => {
     const { date } = useParams();
     const [apod, setApod] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -13,7 +12,7 @@ const ApodCard = () => {
     useEffect(() => {
         const fetchApod = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/get-apod`);
+                const response = await fetch(`http://localhost:8080/${date}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -87,4 +86,4 @@ const ApodCard = () => {
     
 };
 
-export default ApodCard;
+export default ApodDate;
