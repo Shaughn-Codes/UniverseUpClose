@@ -1,0 +1,13 @@
+FROM openjdk:17-alpine AS backend
+
+WORKDIR /.
+
+COPY pom.xml ./
+
+RUN mvn clean package
+
+COPY target/*.jar /app/
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "/app/your-app.jar"]
