@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Card, CardContent, CardMedia, Typography, CircularProgress, CardActionArea, AppBar, Toolbar, IconButton } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Container, Card, CardContent, CardMedia, Typography, CircularProgress, CardActionArea, AppBar, Toolbar, IconButton, Box } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import './ApodCard.css';
+import './ButtonAppBar'
+import ButtonAppBar from './ButtonAppBar';
 
 const ApodCard = () => {
-    const { date } = useParams();
     const [apod, setApod] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -27,7 +27,7 @@ const ApodCard = () => {
         };
 
         fetchApod();
-    }, [date]);
+    }, []);
 
     if (loading) {
         return (
@@ -48,7 +48,10 @@ const ApodCard = () => {
     }
 
     return (
+        
+        
         <Container style={{ marginTop: '50px' }}>
+            <ButtonAppBar></ButtonAppBar>
          <Card>
                 <CardActionArea>
                 <div className='overlay-date'>
@@ -62,9 +65,11 @@ const ApodCard = () => {
                     <Typography variant="body2" color="textSecondary" className="overlay-text-date">
                         {apod.explanation}
                     </Typography>
+                    
                     <Typography variant='' alt='no author' className="overlay-text-date">
                       {apod.copyright}
                     </Typography>
+
                     
                     
                 </CardContent>

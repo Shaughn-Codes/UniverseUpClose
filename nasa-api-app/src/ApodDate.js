@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Container, Card, CardContent, CardMedia, Typography, CircularProgress, CardActionArea } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import './ApodCard.css';
+import './ButtonAppBar'
+import ButtonAppBar from './ButtonAppBar';
 
 const ApodDate = () => {
     const { date } = useParams();
@@ -48,6 +50,7 @@ const ApodDate = () => {
 
     return (
         <Container style={{ marginTop: '50px' }}>
+            <ButtonAppBar></ButtonAppBar>
          <Card>
                 <CardActionArea>
                 <div className='overlay-date'>
