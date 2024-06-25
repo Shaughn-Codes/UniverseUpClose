@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: nasa-api-app\build
+          path: nasa-api-app
 
   deploy:
     runs-on: ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: node-app
-          path: nasa-api-app\build
+          path: nasa-api-app
       
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -54,5 +54,5 @@ jobs:
         with:
           app-name: 'AstronomyPOD'
           slot-name: 'Production'
-          package: nasa-api-app\build
+          package: nasa-api-app
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5CAE16EADC144297B3DE4E70DCDA4090 }}
