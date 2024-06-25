@@ -28,7 +28,7 @@ jobs:
       
       - name: Build Project
         run: npm run build
-        working-directory: nasa-api-app\build
+        working-directory: nasa-api-app/build
 
       
       - name: Upload artifact for deployment job
