@@ -24,6 +24,7 @@ jobs:
       - name: npm install
         run: |
           npm install --production
+          npm run build
         working-directory: nasa-api-app
       
 
