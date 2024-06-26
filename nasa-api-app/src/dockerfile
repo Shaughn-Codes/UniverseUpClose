@@ -8,7 +8,6 @@ RUN npm install
 COPY . .
 RUN npm run build  # Assuming you use npm run build for production build
 
-EXPOSE 80
 
 FROM nginx:alpine
 
