@@ -23,17 +23,14 @@ jobs:
 
       - name: npm install
         run: |
-          npm install --production
-          npm run build
+          npm install
         working-directory: nasa-api-app
-      
-
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: build
-          path: nasa-api-app
+          name: node-app
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -46,8 +43,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: nasa-api-app
-          path: nasa-api-app
+          name: node-app
       
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -55,5 +51,5 @@ jobs:
         with:
           app-name: 'AstronomyPOD'
           slot-name: 'Production'
-          package: nasa-api-app
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5CAE16EADC144297B3DE4E70DCDA4090 }}
