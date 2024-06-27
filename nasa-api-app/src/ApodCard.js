@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Card, CardContent, CardMedia, Typography, CircularProgress, CardActionArea, AppBar, Toolbar, IconButton, Box } from '@mui/material';
-import { useParams } from 'react-router-dom';
+import { Container, Card, CardContent, CardMedia, Typography, CircularProgress, CardActionArea } from '@mui/material';
 import './ApodCard.css';
 import './ButtonAppBar'
 import ButtonAppBar from './ButtonAppBar';
