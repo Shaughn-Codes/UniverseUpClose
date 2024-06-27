@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import ApodCard from './ApodCard';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { MyContext,MyContextProvider } from './YourContext';
 import LandingPage from './LandingPage.js';
 import ApodDate from './ApodDate';
 

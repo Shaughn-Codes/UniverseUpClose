@@ -2,12 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import ApodCard from './ApodCard';
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider, createTheme } from '@mui/material';
-import CssBaseline from '@mui/material';
-import { MyContextProvider } from './YourContext';
-import {theme} from './theme';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
