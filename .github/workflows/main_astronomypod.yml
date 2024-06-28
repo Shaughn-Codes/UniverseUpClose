@@ -52,5 +52,6 @@ jobs:
         with:
           app-name: 'AstronomyPOD'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_127D317C871248EBA522611C6AF3FC2F }}
           package: .
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5CAE16EADC144297B3DE4E70DCDA4090 }}
+          
