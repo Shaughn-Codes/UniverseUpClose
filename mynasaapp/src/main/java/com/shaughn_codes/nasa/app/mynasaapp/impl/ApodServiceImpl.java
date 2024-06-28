@@ -25,7 +25,7 @@ public class ApodServiceImpl implements ApodService {
     public Apod fetchApodData(){
        try {
            HttpHeaders httpHeaders = new HttpHeaders();
-           String url = apodUrl + "?api_key=" + apiKey;
+           String url = "https://api.nasa.gov/planetary/apod" + "?api_key=" + "4dOCDcChMbzOqHSv5Hddg4G334rOf2TUIbhY1HGJ";
            ResponseEntity<Apod> response = restTemplate.exchange(url, HttpMethod.GET,new HttpEntity<>(httpHeaders),Apod.class);
            log.info("Response from Apod API: ",response.getBody().toString());
            System.out.println(response.getBody().toString());
@@ -42,7 +42,7 @@ public class ApodServiceImpl implements ApodService {
     public Apod fecthApodByDate(String date) {
         try {
             HttpHeaders httpHeaders = new HttpHeaders();
-            String url = apodUrl + "?api_key=" + apiKey + "&date=" + date;
+            String url = "https://api.nasa.gov/planetary/apod" + "?api_key=" + "4dOCDcChMbzOqHSv5Hddg4G334rOf2TUIbhY1HGJ" + "&date=" + date;
             ResponseEntity<Apod> response = restTemplate.exchange(url, HttpMethod.GET,new HttpEntity<>(httpHeaders),Apod.class);
             log.info("Response from Apod API date: ",response.getBody().toString());
             System.out.println(response.getBody().toString());
