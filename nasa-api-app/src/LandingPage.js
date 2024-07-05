@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Card, CardContent, Button } from '@mui/material';
+import { Container, Typography, Card, CardContent, Button,TextField } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { useNavigate } from 'react-router-dom';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -21,6 +21,7 @@ const LandingPage = () => {
 
     const handleDateSubmit = () => {
         if (selectedDate) {
+            console.log("Selected Date: ", selectedDate.format('YYYY-MM-DD'));
             navigate(`/${selectedDate.format('YYYY-MM-DD')}`);
         }
     };

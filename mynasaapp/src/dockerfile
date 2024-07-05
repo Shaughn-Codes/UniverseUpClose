@@ -4,7 +4,9 @@ FROM azul/zulu-openjdk-alpine:17
 WORKDIR /app
 
 # Copying the JAR file into the container 
-COPY UniverseUpClose/mynasaapp/target/mynasaapp-0.0.1-SNAPSHOT.jar app.jar
+COPY /UniverseUpClose/mynasaapp/target/mynasaapp-0.0.1-SNAPSHOT.jar app.jar
+
+COPY /UniverseUpClose/mynasaapp/src/main/resources/static /app/static
 
 # Exposing the port the application will run on
 EXPOSE 8080

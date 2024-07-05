@@ -10,11 +10,12 @@ const ApodDate = () => {
     const [apod, setApod] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const apiURL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         const fetchApod = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/${date}`);
+                const response = await fetch(`${apiURL}/get-apod-date/${date}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
