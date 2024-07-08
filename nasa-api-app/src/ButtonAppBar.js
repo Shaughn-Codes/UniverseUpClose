@@ -26,7 +26,7 @@ export default function ButtonAppBar() {
           <Button color="inherit" onClick={handleHomeButton}>Home</Button>
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Astronomy Photo of the Day
+            Astronomy Picture of the Day
           </Typography>
         </Toolbar>
       </AppBar>
