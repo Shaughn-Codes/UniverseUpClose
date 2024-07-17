@@ -15,7 +15,7 @@ const ApodDate = () => {
     useEffect(() => {
         const fetchApod = async () => {
             try {
-                const response = await fetch('https://astropod.azurewebsites.net/get-apod-date/${date}');
+                const response = await fetch(`https://astropod.onrender.com/get-apod-date/${date}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

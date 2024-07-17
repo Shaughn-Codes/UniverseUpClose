@@ -13,7 +13,7 @@ const ApodCard = () => {
     useEffect(() => {
         const fetchApod = async () => {
             try {
-                const response = await fetch('https://astropod.azurewebsites.net/get-apod');
+                const response = await fetch('https://astropod.onrender.com/get-apod');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
